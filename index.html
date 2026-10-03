@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Study Space</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar-panel">
+            <div class="sidebar-brand">
+                <h1>Smart Study Space</h1>
+                <p>Focus deeply and achieve your goals.</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-link active"><i class='bx bx-timer'></i> Pomodoro Timer</a>
+                <a href="#" class="menu-link"><i class='bx bx-list-check'></i> Study Tasks</a>
+            </nav>
+
+            <div class="sidebar-theme">
+                <button id="themeModeBtn"><i class="bx bx-moon"></i> Dark Mode</button>
+                <div class="color-palette">
+                    <span>Choose Accent Color</span>
+                    <div class="color-options">
+                        <button class="color-dot active" data-color="#601cfc" style="background: #601cfc;"></button>
+                        <button class="color-dot" data-color="#7cf03d" style="background: #7cf03d;"></button>
+                        <button class="color-dot" data-color="#22c55e" style="background: #22c55e;"></button>
+                        <button class="color-dot" data-color="#eab308" style="background: #eab308;"></button>
+                        <button class="color-dot" data-color="#3b82f6" style="background: #3b82f6;"></button>
+                        <button class="color-dot" data-color="#f97316" style="background: #f97316;"></button>
+                        <button class="color-dot" data-color="#a855f7" style="background: #a855f7;"></button>
+                        <button class="color-dot" data-color="#06b6d4" style="background: #06b6d4;"></button>
+                        <button class="color-dot" data-color="#9E1A22" style="background: #9E1A22;"></button>
+                        <button class="color-dot" data-color="#10b981" style="background: #10b981;"></button>
+                        <button class="color-dot" data-color="#64748b" style="background: #64748b;"></button>
+                        <button class="color-dot" data-color="#f43f5e" style="background: #f43f5e;"></button>
+                        <button class="color-dot" data-color="#84cc16" style="background: #84cc16;"></button>
+                        <button class="color-dot" data-color="#00f5d4" style="background: #00f5d4;"></button>
+                        <button class="color-dot" data-color="#ff007f" style="background: #ff007f;"></button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <!-- كارت البومودورو -->
+            <section class="pomodoro-card">
+                <div class="card-header">
+                    <h2><i class='bx bx-time-five'></i> pomodoro Timer</h2>
+                </div>
+                <div class="timer-display">25:00</div>
+                <div class="timer-controls">
+                    <button id="startBtn" class="btn-timer btn-start"><i class='bx bx-play'></i> Start</button>
+                    <button id="pauseBtn" class="btn-timer btn-pause"><i class='bx bx-pause'></i> Pause</button>
+                    <button id="resetBtn" class="btn-timer btn-reset"><i class='bx bx-refresh'></i> Reset</button>
+                </div>
+            </section>
+
+            <!-- كارت قائمة المهام -->
+            <section class="tasks-card">
+                <div class="card-header">
+                    <h2><i class='bx bx-select-multiple'></i> Tasks</h2>
+                </div>
+                <div class="task-input-group">
+                    <input type="text" id="taskInput" placeholder="Type Your Task ^_^">
+                    <button id="addTaskBtn"><i class='bx bx-plus'></i> Add Task</button>
+                </div>
+                <ul id="taskList" class="task-list">
+                    <!-- here I will add tasks use JavaScript -->
+                </ul>
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <div id="taskModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class='bx bx-calendar-event'></i> Set Date & Time</h3>
+            </div>
+            <div id="modalTaskName">Task: ...</div>
+            
+            <div class="modal-input-field">
+                <label for="taskDate">Due Date:</label>
+                <input type="date" id="taskDate">
+            </div>
+            <div class="modal-input-field">
+                <label for="taskTime">Due Time:</label>
+                <input type="time" id="taskTime">
+            </div>
+
+            <div class="modal-footer">
+                <button id="cancelModalBtn" class="btn-modal-secondary">Cancel</button>
+                <button id="confirmModalBtn" class="btn-modal-primary">Confirm & Add</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
